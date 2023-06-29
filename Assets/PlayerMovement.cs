@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     {
         MovementState state;
         
-        if (dirX > 0f)
+        if (dirX > 0f) 
         {
             state = MovementState.running;
             sprite.flipX = false;
@@ -66,17 +66,19 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             state = MovementState.idle;
-            if (rb.velocity.y > .1f)
-            {
-                state = MovementState.jumping;
-            }
-            else if (rb.velocity.y < -.1f)
-            {
-                state = MovementState.falling;
-            }
-
-            anim.SetInteger("state", (int) state);
         }
+
+        if (rb.velocity.y > .1f)
+        {
+            state = MovementState.jumping;
+        }
+        else if (rb.velocity.y < -.1f)
+        { 
+            state = MovementState.falling;
+        }
+
+        anim.SetInteger("state", (int) state);
+        
     }
         
 }
