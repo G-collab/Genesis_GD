@@ -33,9 +33,19 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
+        
+        if (SimpleInput.GetButtonDown("Top"))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
 
         UpdateAnimationState();
 
+    }
+
+    public void Jump()
+    {
+        rb.AddForce(transform.up * jumpForce);
     }
 
     private void UpdateAnimationState()
