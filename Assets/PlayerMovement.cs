@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        rb.AddForce(transform.up * jumpForce);
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
 
     private void UpdateAnimationState()
